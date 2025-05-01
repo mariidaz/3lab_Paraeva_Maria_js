@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1 class="logo">Lumière Jewelry</h1>
+        <nav class="header-links">
+            <a href="index.html" class="icon-link">Home</a>
+            <a href="news.html" class="icon-link">News</a>
+        </nav>
+    </header>
+
+    <main class="cart-section">
+        <h2>Your Cart</h2>
+        <div class="filters">
+            <select id="itemType" onchange="filterAndSortItems()">
+                <option value="">All products</option>
+                <option value="necklace">Намисто</option>
+                <option value="ring">Кільце</option>
+            </select>
+            <input type="number" id="minPrice" placeholder="Мін. ціна">
+            <input type="number" id="maxPrice" placeholder="Макс. ціна">
+            <button onclick="filterItems()">Filter</button>
+        </div>
+
+        <div class="products-container"></div>
+        <div class="containertext">
+            <p>Загальна сума: <span id="total-price">0₴</span></p>
+        </div>
+        
+        <div class="chart-controls">
+            <label for="chartType">Тип графіка:</label>
+            <select id="chartType">
+                <option value="pie">Кругова діаграма</option>
+                <option value="bar">Стовпчикова діаграма</option>
+                <option value="line">Графік</option>
+            </select>
+        </div>
+        <canvas id="chartCanvas" width="600" height="400"></canvas>
+        
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <button class="button">Оформити замовлення</button>
+        </div>
+
+    </main>
+    
+    <button id="scrollToTopBtn" title="Вгору">↑</button>
+    <script src="./js/cart.js"></script>
+</body>
+
+</html>
